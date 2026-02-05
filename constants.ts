@@ -79,14 +79,14 @@ export const SERVICES: Service[] = [
     icon: '➕'
   },
 
-  // --- STREAMING (LOGOS PREMIUM SEGÚN IMAGENES) ---
+  // --- STREAMING ---
   {
     id: 'netflix',
     category: 'streaming',
     title: 'NETFLIX PREMIUM',
     requirement: 'PERFIL PRIVADO 4K',
     price: '10 soles',
-    result: 'Acceso Ultra HD 4K con garantía total de stock.',
+    result: 'Acceso Ultra HD 4K con garantía total de stock y entrega inmediata.',
     status: 'OPERATIVO',
     badge: 'PREMIUM',
     icon: '🍿',
@@ -98,7 +98,7 @@ export const SERVICES: Service[] = [
     title: 'DISNEY+ PREMIUM',
     requirement: 'CUENTA COMPLETA',
     price: '6 soles',
-    result: 'Todo el contenido de Disney, Pixar, Marvel y Star en un solo lugar.',
+    result: 'Todo el contenido de Disney, Pixar, Marvel y Star en un solo lugar con la mejor calidad.',
     status: 'OPERATIVO',
     badge: 'STANDARD',
     icon: '🏰',
@@ -110,7 +110,7 @@ export const SERVICES: Service[] = [
     title: 'YOUTUBE PREMIUM',
     requirement: 'A TU CORREO',
     price: '5s (mes) / 12s (3 m)',
-    result: 'Música ilimitada, sin anuncios y videos en segundo plano.',
+    result: 'Música ilimitada, sin anuncios y videos en segundo plano para tu comodidad.',
     status: 'OPERATIVO',
     badge: 'VIP',
     icon: '📺',
@@ -121,8 +121,8 @@ export const SERVICES: Service[] = [
     category: 'streaming',
     title: 'CANVA PRO VIP',
     requirement: 'EQUIPO PREMIUM',
-    price: '4s / 10s / 20s',
-    result: 'Herramientas de diseño profesional desbloqueadas al 100%.',
+    price: '4s (mes) / 10s (3m) / 20s (año)',
+    result: 'Herramientas de diseño profesional desbloqueadas al 100%. Edita como un experto.',
     status: 'OPERATIVO',
     badge: 'VIP',
     icon: '🎨',
@@ -134,7 +134,7 @@ export const SERVICES: Service[] = [
     title: 'CHATGPT PLUS',
     requirement: 'CUENTA PRO',
     price: '10 soles mensual',
-    result: 'Usa GPT-4o, DALL-E y análisis de datos sin restricciones.',
+    result: 'Usa GPT-4o, DALL-E y análisis de datos sin restricciones de tiempo.',
     status: 'OPERATIVO',
     badge: 'VIP',
     icon: '🤖',
@@ -146,21 +146,21 @@ export const SERVICES: Service[] = [
     title: 'CAPCUT PRO',
     requirement: 'TU PROPIA CUENTA',
     price: '10 soles mensual',
-    result: 'Edita videos nivel cine con efectos pro y sin marcas de agua.',
+    result: 'Edita videos nivel cine con efectos pro y sin marcas de agua molestas.',
     status: 'OPERATIVO',
     badge: 'PREMIUM',
     icon: '🎥',
     logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/af/CapCut_logo.svg'
   },
 
-  // --- PROGRAMAS & DESARROLLO (MÁXIMO FLORO COMERCIAL) ---
+  // --- PROGRAMAS & DESARROLLO ---
   {
     id: 'prog-base-datos',
     category: 'programas',
     title: 'BASE DE DATOS DOMINIO VIP',
     requirement: 'TXT (User:Pass / Mail:Pass)',
     price: 'COTIZACIÓN VIP',
-    result: '¿Necesitas datos específicos? Extraemos información masiva por dominio (Netflix.com, Disney.com, etc). Te entregamos un archivo .txt profesional listo para usar con credenciales válidas. ¡Directo al grano!',
+    result: 'Extraemos información masiva por dominio (Netflix.com, Disney.com, etc). Te entregamos un archivo .txt profesional con credenciales correo:contraseña listo para usar.',
     status: 'OPERATIVO',
     badge: 'VIP',
     icon: '📂'
@@ -171,7 +171,7 @@ export const SERVICES: Service[] = [
     title: 'STREAMING BUSINESS MANAGER',
     requirement: 'Panel Web Inteligente',
     price: 'COTIZACIÓN VIP',
-    result: 'Toma el control total de tu imperio de streaming. Con este panel verás cuánto inviertes, cuánto ganas, agregarás clientes en segundos y el sistema te avisará automáticamente por WhatsApp cuando una cuenta esté por vencer. ¡No pierdas ni una sola venta!',
+    result: 'Control total: mira tus inversiones, ganancias reales, agrega clientes y recibe alertas automáticas por WhatsApp cuando una cuenta esté por vencer.',
     status: 'OPERATIVO',
     badge: 'PREMIUM',
     icon: '🖥️'
@@ -182,7 +182,7 @@ export const SERVICES: Service[] = [
     title: 'WEB DESIGN & VENTAS',
     requirement: 'Diseño a tu gusto',
     price: 'PRECIO SEGÚN NEGOCIO',
-    result: 'Creamos la página web que tu negocio merece. Interfaz llamativa, moderna y ultra-optimizada para que tus clientes no pierdan tiempo y vayan directo a cerrar el trato en tu WhatsApp personal. ¡Si no vende, no sirve, y nosotros hacemos que venda!',
+    result: 'Creamos la página web perfecta para tu nicho. Interfaz moderna y optimizada para que tus clientes vayan directo a tu WhatsApp personal.',
     status: 'OPERATIVO',
     badge: 'VIP',
     icon: '🌐'
@@ -193,7 +193,7 @@ export const SERVICES: Service[] = [
     title: 'IDEA REALITY FACTORY',
     requirement: 'Tu idea hecha código',
     price: 'COTIZA TU SUEÑO',
-    result: '¿Tienes una idea millonaria o quieres crear tu propio juego y no sabes programar? ¡Acá somos expertos en hacer realidad lo imposible! Cuéntanos tu proyecto y nosotros lo transformamos en software funcional, APKs o aplicaciones web desde cero.',
+    result: '¿Tienes una idea de juego o programa y no sabes programar? Nosotros lo hacemos realidad. Transformamos tus sueños en software funcional o APKs.',
     status: 'OPERATIVO',
     badge: 'VIP',
     icon: '🛠️'
