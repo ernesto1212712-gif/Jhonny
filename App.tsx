@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { SERVICES, WHATSAPP_NUMBER, CATEGORIES } from './constants';
+import { SERVICES, WHATSAPP_NUMBER, CATEGORIES, FAQS, TESTIMONIALS } from './constants';
 import { ServiceCard } from './components/ServiceCard';
 import { AIAssistant } from './components/AIAssistant';
 import { LoadingScreen } from './components/LoadingScreen';
+import { FAQSection } from './components/FAQSection';
+import { TestimonialsSection } from './components/TestimonialsSection';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -60,7 +62,7 @@ const App: React.FC = () => {
         </button>
       </div>
 
-      <header className="relative pt-32 pb-20 px-4 text-center z-10 animate-fade-up">
+      <header className="relative pt-32 pb-10 px-4 text-center z-10 animate-fade-up">
         <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-10 border transition-colors duration-300 ${isDarkMode ? 'bg-white/5 border-white/10' : 'bg-white border-slate-200 shadow-sm'}`}>
           <span className="flex h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse"></span>
           <span className={`text-[9px] font-bold uppercase tracking-[0.3em] ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Cyber Security Infrastructure</span>
@@ -71,10 +73,10 @@ const App: React.FC = () => {
         </h1>
         
         <p className={`text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed mb-16 px-4 transition-colors duration-300 ${isDarkMode ? 'text-slate-500' : 'text-slate-600'}`}>
-          La verdad está en los datos. Convertimos el análisis de información en <span className="text-blue-500 font-bold">poder digital</span>.
+          Soluciones digitales de alto nivel. Si los datos existen, <span className="text-blue-500 font-bold">nosotros los tenemos</span>.
         </p>
 
-        <div className="flex justify-center px-4 overflow-x-auto custom-scrollbar pb-4">
+        <div className="flex justify-center px-4 overflow-x-auto custom-scrollbar pb-8">
           <div className={`p-1.5 rounded-2xl flex gap-1 shadow-2xl transition-all duration-300 ${isDarkMode ? 'glass-obsidian' : 'bg-white border border-slate-200'}`}>
             {CATEGORIES.map((cat) => (
               <button
@@ -96,17 +98,26 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      <main className="relative max-w-7xl mx-auto px-6 pb-40 z-10 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredServices.map((service) => (
-            <ServiceCard 
-              key={service.id} 
-              service={service} 
-              isDarkMode={isDarkMode}
-              onPurchase={() => handlePurchase(service)} 
-            />
-          ))}
-        </div>
+      <main className="relative max-w-7xl mx-auto px-6 pb-20 z-10 animate-fade-up">
+        {/* Catálogo Grid */}
+        <section id="services" className="mb-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredServices.map((service) => (
+              <ServiceCard 
+                key={service.id} 
+                service={service} 
+                isDarkMode={isDarkMode}
+                onPurchase={() => handlePurchase(service)} 
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <TestimonialsSection testimonials={TESTIMONIALS} isDarkMode={isDarkMode} />
+
+        {/* FAQ */}
+        <FAQSection faqs={FAQS} isDarkMode={isDarkMode} />
       </main>
 
       <footer className={`relative py-16 border-t text-center z-10 transition-colors duration-300 ${isDarkMode ? 'bg-black/40 border-white/5' : 'bg-white border-slate-200'}`}>
@@ -114,10 +125,10 @@ const App: React.FC = () => {
           <div className={`flex flex-col md:flex-row justify-between items-center gap-8 font-bold uppercase tracking-widest text-[8px] transition-colors duration-300 ${isDarkMode ? 'text-slate-600' : 'text-slate-400'}`}>
             <p>&copy; 2025 JHONNYDOXEOVIP • CIBERSEGURIDAD DE ÉLITE</p>
             <div className="flex gap-8">
-              <a href="#" className="hover:text-blue-500 transition-colors">OSINT PROTOCOL</a>
-              <a href="#" className="hover:text-blue-500 transition-colors">VIP SUPPORT</a>
+              <a href="#" className="hover:text-blue-500 transition-colors">PROTOCOLO VIP</a>
+              <a href="#" className="hover:text-blue-500 transition-colors">SOPORTE 24/7</a>
             </div>
-            <p className="text-blue-600 font-black">ENCRYPTED SESSION ACTIVE</p>
+            <p className="text-blue-600 font-black">ENCRIPTACIÓN ACTIVA</p>
           </div>
         </div>
       </footer>
