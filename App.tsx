@@ -80,13 +80,14 @@ const App: React.FC = () => {
           Soluciones digitales de alto nivel. Si los datos existen, <span className="text-blue-600 font-bold">nosotros los tenemos</span>.
         </p>
 
-        <div className="flex justify-center px-4 overflow-x-auto custom-scrollbar pb-8">
-          <div className={`p-1.5 rounded-2xl flex gap-1 shadow-2xl transition-all duration-300 ${isDarkMode ? 'glass-obsidian' : 'bg-white border border-slate-200 shadow-lg shadow-slate-200/50'}`}>
+        {/* Categorías con Scroll Corregido para Móvil */}
+        <div className="w-full flex justify-start md:justify-center px-4 overflow-x-auto custom-scrollbar pb-8 snap-x">
+          <div className={`p-1.5 rounded-2xl flex gap-1 shadow-2xl transition-all duration-300 min-w-max mx-auto md:mx-0 ${isDarkMode ? 'glass-obsidian' : 'bg-white border border-slate-200 shadow-lg shadow-slate-200/50'}`}>
             {CATEGORIES.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`flex items-center gap-3 px-6 md:px-8 py-3.5 rounded-xl text-[10px] md:text-xs font-black transition-all uppercase tracking-widest border whitespace-nowrap ${
+                className={`flex items-center gap-2 md:gap-3 px-5 md:px-8 py-3 md:py-3.5 rounded-xl text-[9px] md:text-xs font-black transition-all uppercase tracking-widest border whitespace-nowrap snap-start ${
                   activeCategory === cat.id 
                   ? 'bg-blue-600 text-white shadow-lg border-blue-400/30' 
                   : isDarkMode 
@@ -94,7 +95,7 @@ const App: React.FC = () => {
                     : 'text-slate-600 hover:text-blue-600 hover:bg-blue-50 border-transparent'
                 }`}
               >
-                <span className="text-lg">{cat.icon}</span>
+                <span className="text-base md:text-lg">{cat.icon}</span>
                 {cat.label}
               </button>
             ))}
@@ -117,7 +118,7 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Testimonials */}
+        {/* Test testimonials */}
         <TestimonialsSection testimonials={TESTIMONIALS} isDarkMode={isDarkMode} />
 
         {/* FAQ */}
