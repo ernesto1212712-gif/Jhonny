@@ -16,10 +16,12 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onPurchase })
   };
 
   const getCategoryLabel = () => {
-    if (service.category === 'streaming') return 'Se entrega:';
-    if (service.category === 'programas') return 'Suministrado:';
-    return 'Requisito:';
+    if (service.category === 'streaming') return 'Modo:';
+    if (service.category === 'programas') return 'Entrega:';
+    return 'Comando:';
   };
+
+  const isCommand = service.requirement.startsWith('/');
 
   return (
     <div className="group bg-white rounded-[2.5rem] p-7 border border-slate-200 card-hover flex flex-col h-full shadow-sm relative overflow-hidden">
@@ -30,9 +32,9 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onPurchase })
 
       <div className="flex justify-between items-start mb-6">
         <div className="flex items-center gap-4">
-          <div className="w-16 h-16 bg-slate-50 rounded-3xl flex items-center justify-center text-3xl shadow-sm border border-slate-100 group-hover:scale-110 transition-transform duration-500 overflow-hidden">
+          <div className="w-16 h-16 bg-slate-50 rounded-3xl flex items-center justify-center text-3xl shadow-sm border border-slate-100 group-hover:scale-110 transition-transform duration-500 overflow-hidden p-3">
             {service.logoUrl ? (
-              <img src={service.logoUrl} alt={service.title} className="w-10 h-10 object-contain" />
+              <img src={service.logoUrl} alt={service.title} className="w-full h-full object-contain" />
             ) : (
               service.icon
             )}
@@ -58,13 +60,13 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onPurchase })
           <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
             {getCategoryLabel()}
           </span>
-          <span className="text-xs font-bold text-slate-700 leading-tight">
-            {service.requirement.replace(/Suministrado: /g, '')}
+          <span className={`text-sm font-bold leading-tight ${isCommand ? 'font-mono text-indigo-600 bg-indigo-50 px-2 py-1 rounded-lg w-fit' : 'text-slate-700'}`}>
+            {service.requirement}
           </span>
         </div>
 
         <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100 group-hover:bg-indigo-50/30 group-hover:border-indigo-100 transition-colors">
-          <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Información exclusiva</p>
+          <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Información del Sistema</p>
           <p className="text-xs text-slate-600 leading-relaxed font-medium">
             {service.result}
           </p>

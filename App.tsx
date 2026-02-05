@@ -17,12 +17,14 @@ const App: React.FC = () => {
   const handlePurchase = (service: typeof SERVICES[0]) => {
     let message = '';
     
-    if (service.category === 'streaming') {
-      message = `Hola JhonnyDoxeoVip, deseo adquirir una cuenta de *${service.title}* por ${service.price}. ¿Tienen stock?`;
+    if (service.id === 'curso-generacion') {
+      message = `¡Hola JhonnyDoxeoVip! 🚀 Vengo por el extraordinario *CURSO DE GENERACIÓN DE CUENTAS*. Estoy listo para aprender. Escribo la palabra: *!pagar* para continuar con la compra.`;
+    } else if (service.category === 'streaming') {
+      message = `Hola JhonnyDoxeoVip, deseo adquirir una cuenta de *${service.title}*.\nPlan: ${service.requirement}\nPrecio: ${service.price}.\n¿Tienen stock disponible?`;
     } else if (service.category === 'programas') {
-      message = `Hola JhonnyDoxeoVip, me interesa el servicio de programación: *${service.title}*.\n\nDescripción: ${service.result}\n\nDeseo una cotización para mi proyecto.`;
+      message = `Hola JhonnyDoxeoVip, me interesa tu servicio de Programación VIP: *${service.title}*.\nDescripción: ${service.result}\nTengo una idea/negocio y quiero que la hagas realidad.`;
     } else {
-      message = `Hola JhonnyDoxeoVip, solicito el servicio: *${service.title}*.\n\nRequisito: ${service.requirement}\nCosto: ${service.price}\n\nEspero instrucciones para el pago.`;
+      message = `Hola JhonnyDoxeoVip, solicito el servicio de Inteligencia: *${service.title}*.\nRequisito: ${service.requirement}\nCosto: ${service.price}.`;
     }
     
     const encodedMessage = encodeURIComponent(message);
@@ -35,7 +37,6 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-900">
-      {/* Background elements */}
       <div className="fixed inset-0 pointer-events-none opacity-40">
         <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-indigo-100 rounded-full blur-[120px]"></div>
         <div className="absolute bottom-[20%] right-[-10%] w-[40vw] h-[40vw] bg-blue-50 rounded-full blur-[100px]"></div>
@@ -44,7 +45,7 @@ const App: React.FC = () => {
       <header className="relative pt-24 pb-16 px-4 text-center z-10">
         <div className="inline-flex items-center gap-2 px-5 py-2 bg-white rounded-full border border-slate-200 shadow-sm mb-12 animate-fade-in">
           <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">SISTEMAS VIP • ONLINE</span>
+          <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">SISTEMAS ELITE • ONLINE</span>
         </div>
         
         <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.85]">
@@ -52,10 +53,9 @@ const App: React.FC = () => {
         </h1>
         
         <p className="text-slate-500 text-lg md:text-2xl font-bold max-w-2xl mx-auto leading-tight mb-16">
-          Investigación digital avanzada, entretenimiento premium y desarrollo de software a medida.
+          Investigación OSINT Profesional, Cuentas Streaming y Desarrollo de Software Master.
         </p>
 
-        {/* Categories */}
         <div className="flex justify-center">
           <div className="bg-white/70 backdrop-blur-md p-2 rounded-[2.5rem] flex flex-wrap justify-center gap-2 shadow-xl border border-white/50">
             {CATEGORIES.map((cat) => (
@@ -91,12 +91,12 @@ const App: React.FC = () => {
       <footer className="relative py-20 bg-white border-t border-slate-100 text-center z-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-slate-400 font-bold uppercase tracking-widest text-[9px]">
-            <p>&copy; 2025 JHONNYDOXEOVIP • OSINT & DEV</p>
+            <p>&copy; 2025 JHONNYDOXEOVIP • OSINT & MASTER DEVELOPER</p>
             <div className="flex gap-10">
-              <a href="#" className="hover:text-indigo-600">SOPORTE ELITE</a>
-              <a href="#" className="hover:text-indigo-600">GARANTÍA TOTAL</a>
+              <a href="#" className="hover:text-indigo-600">SOPORTE ELITE 24/7</a>
+              <a href="#" className="hover:text-indigo-600">PROTOCOLOS VIP</a>
             </div>
-            <p className="text-indigo-600 font-black">ENCRIPTACIÓN DE DATOS ACTIVA</p>
+            <p className="text-indigo-600 font-black">ENCRIPTACIÓN AES-256 ACTIVA</p>
           </div>
         </div>
       </footer>
