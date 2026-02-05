@@ -121,7 +121,7 @@ export const SERVICES: Service[] = [
     category: 'streaming',
     title: 'CANVA PRO VIP',
     requirement: 'EQUIPO PREMIUM',
-    price: '4s (mes) / 10s (3m) / 20s (año)',
+    price: '4 soles el mes / 10 soles 3 meses / 20 soles un año',
     result: 'Herramientas de diseño profesional desbloqueadas al 100%. Edita como un experto.',
     status: 'OPERATIVO',
     badge: 'VIP',
