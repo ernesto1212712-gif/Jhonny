@@ -27,6 +27,10 @@ const App: React.FC = () => {
       message = `Hola JhonnyDoxeoVip, deseo adquirir una cuenta de *${service.title}*.\nPlan: ${service.requirement}\nPrecio: ${service.price}.\n¿Tienen stock disponible?`;
     } else if (service.category === 'programas') {
       message = `Hola JhonnyDoxeoVip, me interesa tu servicio de Programación VIP: *${service.title}*.\nDescripción: ${service.result}\nTengo una idea/negocio y quiero que la hagas realidad.`;
+    } else if (service.id === 'extra-izipay') {
+        message = `¡Hola JhonnyDoxeoVip! 💳 Me interesa el servicio de *IZIPAY A DOMINIO PROPIO*. Quiero cobrar de forma profesional y anónima. ¿Me das más info?`;
+    } else if (service.id === 'extra-wsban') {
+        message = `¡Hola JhonnyDoxeoVip! 🚫 Solicito el servicio de *BANEO DE WHATSAPP*. Tengo el número objetivo listo.`;
     } else {
       message = `Hola JhonnyDoxeoVip, solicito el servicio de Inteligencia: *${service.title}*.\nRequisito: ${service.requirement}\nCosto: ${service.price}.`;
     }
@@ -43,15 +47,15 @@ const App: React.FC = () => {
     <div className={`min-h-screen transition-colors duration-500 ${isDarkMode ? 'bg-[#0a0a0b] text-slate-200' : 'bg-slate-50 text-slate-900'}`}>
       {/* Background Decor */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className={`absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] rounded-full blur-[160px] transition-opacity duration-700 ${isDarkMode ? 'bg-blue-900/10 opacity-100' : 'bg-blue-500/5 opacity-50'}`}></div>
-        <div className={`absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full blur-[140px] transition-opacity duration-700 ${isDarkMode ? 'bg-indigo-900/10 opacity-100' : 'bg-indigo-500/5 opacity-50'}`}></div>
+        <div className={`absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] rounded-full blur-[160px] transition-opacity duration-700 ${isDarkMode ? 'bg-blue-900/10 opacity-100' : 'bg-blue-500/10 opacity-70'}`}></div>
+        <div className={`absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full blur-[140px] transition-opacity duration-700 ${isDarkMode ? 'bg-indigo-900/10 opacity-100' : 'bg-indigo-500/10 opacity-70'}`}></div>
       </div>
 
       {/* Theme Toggle Button */}
       <div className="fixed top-6 right-6 z-[60]">
         <button 
           onClick={toggleTheme}
-          className={`p-3 rounded-2xl border transition-all duration-300 ${isDarkMode ? 'bg-white/5 border-white/10 text-amber-400 hover:bg-white/10' : 'bg-white border-slate-200 text-blue-600 shadow-lg hover:shadow-xl'}`}
+          className={`p-3 rounded-2xl border transition-all duration-300 shadow-2xl ${isDarkMode ? 'bg-white/5 border-white/10 text-amber-400 hover:bg-white/10' : 'bg-white border-slate-200 text-blue-600 hover:shadow-blue-200/50'}`}
           aria-label="Alternar modo de color"
         >
           {isDarkMode ? (
@@ -63,31 +67,31 @@ const App: React.FC = () => {
       </div>
 
       <header className="relative pt-32 pb-10 px-4 text-center z-10 animate-fade-up">
-        <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-10 border transition-colors duration-300 ${isDarkMode ? 'bg-white/5 border-white/10' : 'bg-white border-slate-200 shadow-sm'}`}>
+        <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-10 border transition-colors duration-300 ${isDarkMode ? 'bg-white/5 border-white/10' : 'bg-blue-50 border-blue-200 shadow-sm'}`}>
           <span className="flex h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse"></span>
-          <span className={`text-[9px] font-bold uppercase tracking-[0.3em] ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Cyber Security Infrastructure</span>
+          <span className={`text-[9px] font-black uppercase tracking-[0.3em] ${isDarkMode ? 'text-slate-400' : 'text-blue-600'}`}>Cyber Security Infrastructure</span>
         </div>
         
-        <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-8 leading-none">
+        <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-8 leading-none">
           <span className={isDarkMode ? 'text-white' : 'text-slate-900'}>Jhonny</span><span className="gradient-text">DoxeoVip</span>
         </h1>
         
-        <p className={`text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed mb-16 px-4 transition-colors duration-300 ${isDarkMode ? 'text-slate-500' : 'text-slate-600'}`}>
-          Soluciones digitales de alto nivel. Si los datos existen, <span className="text-blue-500 font-bold">nosotros los tenemos</span>.
+        <p className={`text-lg md:text-xl font-semibold max-w-2xl mx-auto leading-relaxed mb-16 px-4 transition-colors duration-300 ${isDarkMode ? 'text-slate-500' : 'text-slate-700'}`}>
+          Soluciones digitales de alto nivel. Si los datos existen, <span className="text-blue-600 font-bold">nosotros los tenemos</span>.
         </p>
 
         <div className="flex justify-center px-4 overflow-x-auto custom-scrollbar pb-8">
-          <div className={`p-1.5 rounded-2xl flex gap-1 shadow-2xl transition-all duration-300 ${isDarkMode ? 'glass-obsidian' : 'bg-white border border-slate-200'}`}>
+          <div className={`p-1.5 rounded-2xl flex gap-1 shadow-2xl transition-all duration-300 ${isDarkMode ? 'glass-obsidian' : 'bg-white border border-slate-200 shadow-lg shadow-slate-200/50'}`}>
             {CATEGORIES.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`flex items-center gap-3 px-6 md:px-8 py-3.5 rounded-xl text-[10px] md:text-xs font-bold transition-all uppercase tracking-widest border whitespace-nowrap ${
+                className={`flex items-center gap-3 px-6 md:px-8 py-3.5 rounded-xl text-[10px] md:text-xs font-black transition-all uppercase tracking-widest border whitespace-nowrap ${
                   activeCategory === cat.id 
                   ? 'bg-blue-600 text-white shadow-lg border-blue-400/30' 
                   : isDarkMode 
                     ? 'text-slate-400 hover:text-slate-200 hover:bg-white/5 border-transparent' 
-                    : 'text-slate-500 hover:text-blue-600 hover:bg-blue-50 border-transparent'
+                    : 'text-slate-600 hover:text-blue-600 hover:bg-blue-50 border-transparent'
                 }`}
               >
                 <span className="text-lg">{cat.icon}</span>
@@ -101,7 +105,7 @@ const App: React.FC = () => {
       <main className="relative max-w-7xl mx-auto px-6 pb-20 z-10 animate-fade-up">
         {/* Catálogo Grid */}
         <section id="services" className="mb-32">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredServices.map((service) => (
               <ServiceCard 
                 key={service.id} 
@@ -122,11 +126,11 @@ const App: React.FC = () => {
 
       <footer className={`relative py-16 border-t text-center z-10 transition-colors duration-300 ${isDarkMode ? 'bg-black/40 border-white/5' : 'bg-white border-slate-200'}`}>
         <div className="max-w-7xl mx-auto px-6">
-          <div className={`flex flex-col md:flex-row justify-between items-center gap-8 font-bold uppercase tracking-widest text-[8px] transition-colors duration-300 ${isDarkMode ? 'text-slate-600' : 'text-slate-400'}`}>
+          <div className={`flex flex-col md:flex-row justify-between items-center gap-8 font-black uppercase tracking-widest text-[9px] transition-colors duration-300 ${isDarkMode ? 'text-slate-600' : 'text-slate-700'}`}>
             <p>&copy; 2025 JHONNYDOXEOVIP • CIBERSEGURIDAD DE ÉLITE</p>
             <div className="flex gap-8">
-              <a href="#" className="hover:text-blue-500 transition-colors">PROTOCOLO VIP</a>
-              <a href="#" className="hover:text-blue-500 transition-colors">SOPORTE 24/7</a>
+              <a href="#" className="hover:text-blue-600 transition-colors">PROTOCOLO VIP</a>
+              <a href="#" className="hover:text-blue-600 transition-colors">SOPORTE 24/7</a>
             </div>
             <p className="text-blue-600 font-black">ENCRIPTACIÓN ACTIVA</p>
           </div>

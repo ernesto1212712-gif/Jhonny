@@ -20,40 +20,40 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ faqs, isDarkMode }) => {
   return (
     <section className="mb-32 max-w-4xl mx-auto">
       <div className="text-center mb-12">
-        <h2 className={`text-3xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Preguntas Frecuentes</h2>
-        <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
+        <h2 className={`text-4xl font-black mb-4 tracking-tighter ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Preguntas Frecuentes</h2>
+        <div className="w-24 h-1.5 bg-blue-600 mx-auto rounded-full shadow-lg"></div>
       </div>
       
-      <div className="space-y-4">
+      <div className="space-y-5">
         {faqs.map((faq, index) => (
           <div 
             key={index} 
-            className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+            className={`rounded-[2rem] border transition-all duration-300 overflow-hidden ${
               isDarkMode 
                 ? 'bg-white/[0.02] border-white/5 hover:border-blue-500/30' 
-                : 'bg-white border-slate-200 shadow-sm hover:border-blue-200'
+                : 'bg-white border-slate-200 shadow-xl shadow-slate-200/20 hover:border-blue-400'
             }`}
           >
             <button 
               onClick={() => toggleFAQ(index)}
-              className="w-full px-8 py-6 text-left flex justify-between items-center group"
+              className="w-full px-10 py-7 text-left flex justify-between items-center group"
             >
-              <span className={`font-bold text-sm tracking-wide ${isDarkMode ? 'text-slate-200' : 'text-slate-800'}`}>
+              <span className={`font-black text-sm tracking-tight ${isDarkMode ? 'text-slate-200' : 'text-slate-900'}`}>
                 {faq.question}
               </span>
-              <span className={`transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
-                <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              <span className={`transition-transform duration-300 p-2 rounded-xl ${isDarkMode ? 'bg-white/5' : 'bg-blue-50 text-blue-600'} ${openIndex === index ? 'rotate-180' : ''}`}>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7" />
                 </svg>
               </span>
             </button>
             
             <div 
               className={`transition-all duration-300 ease-in-out ${
-                openIndex === index ? 'max-h-48 opacity-100 py-6' : 'max-h-0 opacity-0 py-0'
-              } px-8 border-t ${isDarkMode ? 'border-white/5' : 'border-slate-100'}`}
+                openIndex === index ? 'max-h-96 opacity-100 py-8' : 'max-h-0 opacity-0 py-0'
+              } px-10 border-t ${isDarkMode ? 'border-white/5' : 'border-slate-100 bg-slate-50/30'}`}
             >
-              <p className={`text-sm leading-relaxed ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+              <p className={`text-[15px] leading-relaxed font-bold ${isDarkMode ? 'text-slate-400' : 'text-slate-700'}`}>
                 {faq.answer}
               </p>
             </div>
