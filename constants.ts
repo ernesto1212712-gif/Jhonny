@@ -11,7 +11,7 @@ export const CATEGORIES = [
 ];
 
 export const SERVICES: Service[] = [
-  // --- DOXEO (LOS 26 COMANDOS) ---
+  // --- DOXEO ---
   {
     id: 'reniec-base',
     category: 'doxeo',
@@ -68,215 +68,6 @@ export const SERVICES: Service[] = [
     icon: '📜'
   },
   {
-    id: 'denuncias-vehicular',
-    category: 'doxeo',
-    title: 'DENUNCIAS VEHICULAR',
-    requirement: 'PLACA',
-    price: '15 soles',
-    result: 'VERIFICA SI UNA PLACA CUENTA CON DENUNCIAS EN FORMATO PDF',
-    status: 'OPERATIVO',
-    badge: 'PREMIUM',
-    icon: '🚓'
-  },
-  {
-    id: 'requisitoria',
-    category: 'doxeo',
-    title: 'REQUISITORIA ONLINE',
-    requirement: 'DNI',
-    price: '25 soles',
-    result: 'VERIFICA SI UN DNI CUENTA CON REQUISITORIA EN FORMATO PDF',
-    status: 'OPERATIVO',
-    badge: 'PREMIUM',
-    icon: '👮'
-  },
-  {
-    id: 'requisitoria-vehicular',
-    category: 'doxeo',
-    title: 'REQUISITORIA VEHICULAR',
-    requirement: 'PLACA',
-    price: '20 soles',
-    result: 'VERIFICA SI UNA PLACA CUENTA CON REQUISITORIA VEHICULAR EN PDF',
-    status: 'OPERATIVO',
-    badge: 'PREMIUM',
-    icon: '🚔'
-  },
-  {
-    id: 'redam',
-    category: 'doxeo',
-    title: 'REDAM (ALIMENTOS)',
-    requirement: 'DNI',
-    price: '15 soles',
-    result: 'CONSULTA DEMANDAS POR ALIMENTOS CON FOTO Y DETALLES',
-    status: 'OPERATIVO',
-    badge: 'PREMIUM',
-    icon: '⛓'
-  },
-  {
-    id: 'sunat-empresas',
-    category: 'doxeo',
-    title: 'SUNAT EMPRESAS',
-    requirement: 'DNI, RUC',
-    price: '10 soles',
-    result: 'CONSULTA EMPRESAS DE UNA PERSONA MEDIANTE DNI/RUC EN PDF',
-    status: 'OPERATIVO',
-    badge: 'PREMIUM',
-    icon: '🏛️'
-  },
-  {
-    id: 'reporte-consumos',
-    category: 'doxeo',
-    title: 'REPORTE CONSUMOS PDF',
-    requirement: 'DNI, RUC',
-    price: '5 soles',
-    result: 'REPORTE DE CONSUMOS Y GASTOS (SUNAT) EN PDF',
-    status: 'OPERATIVO',
-    badge: 'PREMIUM',
-    icon: '📊'
-  },
-  {
-    id: 'sunarp-propiedades',
-    category: 'doxeo',
-    title: 'SUNARP PROPIEDADES',
-    requirement: 'DNI, RUC',
-    price: '5 soles',
-    result: 'VERIFICA SI UN DNI CUENTA CON PROPIEDADES EN FORMATO PDF',
-    status: 'OPERATIVO',
-    badge: 'STANDARD',
-    icon: '🏘️'
-  },
-  {
-    id: 'tive',
-    category: 'doxeo',
-    title: 'TIVE ORIGINAL',
-    requirement: 'PLACA',
-    price: '15 soles',
-    result: 'CONSULTA LA TARJETA DE IDENTIFICACION VEHICULAR PDF',
-    status: 'OPERATIVO',
-    badge: 'PREMIUM',
-    icon: '🚗'
-  },
-  {
-    id: 'boleta-informativa',
-    category: 'doxeo',
-    title: 'BOLETA INFORMATIVA',
-    requirement: 'PLACA',
-    price: '15 soles',
-    result: 'CONSULTA LA BOLETA INFORMATIVA VEHICULAR PDF',
-    status: 'OPERATIVO',
-    badge: 'PREMIUM',
-    icon: '📄'
-  },
-  {
-    id: 'ant-penales',
-    category: 'doxeo',
-    title: 'ANTECEDENTES PENALES',
-    requirement: 'DNI',
-    price: '20 soles',
-    result: 'GENERA ANTECEDENTES PENALES EN PDF MEDIANTE DNI',
-    status: 'OPERATIVO',
-    badge: 'STANDARD',
-    icon: '📜'
-  },
-  {
-    id: 'ant-policiales',
-    category: 'doxeo',
-    title: 'ANTECEDENTES POLICIALES',
-    requirement: 'DNI',
-    price: '5 soles',
-    result: 'GENERA ANTECEDENTES POLICIALES EN PDF MEDIANTE DNI',
-    status: 'OPERATIVO',
-    badge: 'STANDARD',
-    icon: '📜'
-  },
-  {
-    id: 'ant-judiciales',
-    category: 'doxeo',
-    title: 'ANTECEDENTES JUDICIALES',
-    requirement: 'DNI',
-    price: '15 soles',
-    result: 'GENERA ANTECEDENTES JUDICIALES EN PDF MEDIANTE DNI',
-    status: 'OPERATIVO',
-    badge: 'STANDARD',
-    icon: '📜'
-  },
-  {
-    id: 'sunedu',
-    category: 'doxeo',
-    title: 'SUNEDU TITULOS',
-    requirement: 'DNI',
-    price: '15 soles',
-    result: 'CONSULTA TITULOS UNIVERSITARIOS EN SUNEDU MEDIANTE DNI',
-    status: 'OPERATIVO',
-    badge: 'STANDARD',
-    icon: '🎓'
-  },
-  {
-    id: 'minedu',
-    category: 'doxeo',
-    title: 'MINEDU CERTIFICADO',
-    requirement: 'DNI',
-    price: '15 soles',
-    result: 'CONSULTA MINEDU CERTIFICADO DE ESTUDIO EN FORMATO PDF',
-    status: 'OPERATIVO',
-    badge: 'VIP',
-    icon: '🏫'
-  },
-  {
-    id: 'arbol',
-    category: 'doxeo',
-    title: 'ARBOL GENEALOGICO',
-    requirement: 'DNI',
-    price: '10 soles',
-    result: 'CONSULTA EL ARBOL GENEALOGICO EN PDF DE UNA PERSONA',
-    status: 'OPERATIVO',
-    badge: 'STANDARD',
-    icon: '🌳'
-  },
-  {
-    id: 'sentinel',
-    category: 'doxeo',
-    title: 'REPORTE SENTINEL',
-    requirement: 'DNI, RUC',
-    price: '10 soles',
-    result: 'CONSULTA EL REPORTE SENTINEL EN PDF DE UNA PERSONA',
-    status: 'OPERATIVO',
-    badge: 'PREMIUM',
-    icon: '💰'
-  },
-  {
-    id: 'mtc',
-    category: 'doxeo',
-    title: 'MTC LICENCIA',
-    requirement: 'DNI',
-    price: '15 soles',
-    result: 'CONSULTA FICHA LICENCIA POR DNI EN FORMATO PDF',
-    status: 'OPERATIVO',
-    badge: 'STANDARD',
-    icon: '💎'
-  },
-  {
-    id: 'revision',
-    category: 'doxeo',
-    title: 'REVISION TECNICA',
-    requirement: 'PLACA',
-    price: '15 soles',
-    result: 'CONSULTA LA REVISION TECNICA MEDIANTE PLACA',
-    status: 'OPERATIVO',
-    badge: 'STANDARD',
-    icon: '🛠️'
-  },
-  {
-    id: 'soat',
-    category: 'doxeo',
-    title: 'HISTORIAL SOAT',
-    requirement: 'PLACA',
-    price: '10 soles',
-    result: 'CONSULTA SEGURO VEHICULAR HISTORIAL TEXTO POR PLACA',
-    status: 'OPERATIVO',
-    badge: 'STANDARD',
-    icon: '🛡️'
-  },
-  {
     id: 'metadata',
     category: 'doxeo',
     title: 'META DATA COMPLETE',
@@ -287,26 +78,15 @@ export const SERVICES: Service[] = [
     badge: 'STANDARD',
     icon: '➕'
   },
-  {
-    id: 'facial',
-    category: 'doxeo',
-    title: 'RECONOCIMIENTO FACIAL',
-    requirement: 'FOTO NITIDA',
-    price: '15 soles',
-    result: 'BOTA PERSONAS SEGUN EL RECONOCIMIENTO FACIAL',
-    status: 'OPERATIVO',
-    badge: 'PREMIUM',
-    icon: '👤'
-  },
 
-  // --- STREAMING (LOGOS ACTUALIZADOS SEGÚN IMAGENES) ---
+  // --- STREAMING (LOGOS PREMIUM SEGÚN IMAGENES) ---
   {
     id: 'netflix',
     category: 'streaming',
     title: 'NETFLIX PREMIUM',
     requirement: 'PERFIL PRIVADO 4K',
     price: '10 soles',
-    result: 'Calidad Ultra HD para disfrutar tus series favoritas.',
+    result: 'Acceso Ultra HD 4K con garantía total de stock.',
     status: 'OPERATIVO',
     badge: 'PREMIUM',
     icon: '🍿',
@@ -318,7 +98,7 @@ export const SERVICES: Service[] = [
     title: 'DISNEY+ PREMIUM',
     requirement: 'CUENTA COMPLETA',
     price: '6 soles',
-    result: 'Acceso a todo el universo Disney y Star con la mejor calidad.',
+    result: 'Todo el contenido de Disney, Pixar, Marvel y Star en un solo lugar.',
     status: 'OPERATIVO',
     badge: 'STANDARD',
     icon: '🏰',
@@ -329,56 +109,20 @@ export const SERVICES: Service[] = [
     category: 'streaming',
     title: 'YOUTUBE PREMIUM',
     requirement: 'A TU CORREO',
-    price: '5s (mes) / 12s (3 meses)',
-    result: 'Sin publicidad, música de fondo y descargas ilimitadas.',
+    price: '5s (mes) / 12s (3 m)',
+    result: 'Música ilimitada, sin anuncios y videos en segundo plano.',
     status: 'OPERATIVO',
     badge: 'VIP',
     icon: '📺',
     logoUrl: 'https://www.vectorlogo.zone/logos/youtube/youtube-icon.svg'
   },
   {
-    id: 'hbo-max',
-    category: 'streaming',
-    title: 'MAX (HBO MAX)',
-    requirement: 'PERFIL PRIVADO',
-    price: '6 soles mensual',
-    result: 'Warner Bros, HBO y cine de estreno directo en tu pantalla.',
-    status: 'OPERATIVO',
-    badge: 'PREMIUM',
-    icon: '🎬',
-    logoUrl: 'https://www.vectorlogo.zone/logos/hbo/hbo-icon.svg'
-  },
-  {
-    id: 'prime-vid',
-    category: 'streaming',
-    title: 'PRIME VIDEO',
-    requirement: 'CUENTA PROPIA',
-    price: '8 soles mensual',
-    result: 'Amazon Originals y los mejores clásicos sin anuncios.',
-    status: 'OPERATIVO',
-    badge: 'STANDARD',
-    icon: '📦',
-    logoUrl: 'https://www.vectorlogo.zone/logos/amazon_prime/amazon_prime-icon.svg'
-  },
-  {
-    id: 'spotify-pre',
-    category: 'streaming',
-    title: 'SPOTIFY PREMIUM',
-    requirement: 'TU PROPIA CUENTA',
-    price: '8 soles mensual',
-    result: 'Toda tu música favorita en máxima calidad sin interrupciones.',
-    status: 'OPERATIVO',
-    badge: 'STANDARD',
-    icon: '🎧',
-    logoUrl: 'https://www.vectorlogo.zone/logos/spotify/spotify-icon.svg'
-  },
-  {
     id: 'canva-pro',
     category: 'streaming',
-    title: 'CANVA PRO',
+    title: 'CANVA PRO VIP',
     requirement: 'EQUIPO PREMIUM',
-    price: '4s (mes) / 10s (3 meses) / 20s (año)',
-    result: 'Desbloquea todas las herramientas de diseño pro y lleva tu creatividad al máximo.',
+    price: '4s / 10s / 20s',
+    result: 'Herramientas de diseño profesional desbloqueadas al 100%.',
     status: 'OPERATIVO',
     badge: 'VIP',
     icon: '🎨',
@@ -390,7 +134,7 @@ export const SERVICES: Service[] = [
     title: 'CHATGPT PLUS',
     requirement: 'CUENTA PRO',
     price: '10 soles mensual',
-    result: 'Acceso a la inteligencia artificial más potente: GPT-4o y herramientas exclusivas.',
+    result: 'Usa GPT-4o, DALL-E y análisis de datos sin restricciones.',
     status: 'OPERATIVO',
     badge: 'VIP',
     icon: '🤖',
@@ -400,23 +144,23 @@ export const SERVICES: Service[] = [
     id: 'capcut-pro',
     category: 'streaming',
     title: 'CAPCUT PRO',
-    requirement: 'TU CUENTA',
+    requirement: 'TU PROPIA CUENTA',
     price: '10 soles mensual',
-    result: 'Edición de video avanzada sin límites ni marcas de agua con las mejores transiciones.',
+    result: 'Edita videos nivel cine con efectos pro y sin marcas de agua.',
     status: 'OPERATIVO',
     badge: 'PREMIUM',
     icon: '🎥',
     logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/af/CapCut_logo.svg'
   },
 
-  // --- PROGRAMAS & DESARROLLO (CON MÁS "FLORO" Y DETALLES) ---
+  // --- PROGRAMAS & DESARROLLO (MÁXIMO FLORO COMERCIAL) ---
   {
     id: 'prog-base-datos',
     category: 'programas',
     title: 'BASE DE DATOS DOMINIO VIP',
-    requirement: 'Suministrado: Archivo TXT (User:Pass)',
+    requirement: 'TXT (User:Pass / Mail:Pass)',
     price: 'COTIZACIÓN VIP',
-    result: 'Obtén bases de datos exclusivas extrayendo información de dominios específicos (Netflix.com, Disney.com, etc). Te entregamos un archivo TXT profesional con usuario:contraseña o correo:contraseña listo para usar.',
+    result: '¿Necesitas datos específicos? Extraemos información masiva por dominio (Netflix.com, Disney.com, etc). Te entregamos un archivo .txt profesional listo para usar con credenciales válidas. ¡Directo al grano!',
     status: 'OPERATIVO',
     badge: 'VIP',
     icon: '📂'
@@ -424,10 +168,10 @@ export const SERVICES: Service[] = [
   {
     id: 'prog-panel-admin',
     category: 'programas',
-    title: 'PANEL ADM. STREAMING ELITE',
-    requirement: 'Suministrado: Interfaz Moderna & Ordenada',
+    title: 'STREAMING BUSINESS MANAGER',
+    requirement: 'Panel Web Inteligente',
     price: 'COTIZACIÓN VIP',
-    result: 'El centro de mando definitivo para tu negocio. Podrás ver cuánto inviertes, cuánto ganas en tiempo real, agregar clientes nuevos de forma masiva y recibir alertas automáticas cuando una cuenta esté por terminar. Maneja tu imperio como un profesional.',
+    result: 'Toma el control total de tu imperio de streaming. Con este panel verás cuánto inviertes, cuánto ganas, agregarás clientes en segundos y el sistema te avisará automáticamente por WhatsApp cuando una cuenta esté por vencer. ¡No pierdas ni una sola venta!',
     status: 'OPERATIVO',
     badge: 'PREMIUM',
     icon: '🖥️'
@@ -435,10 +179,10 @@ export const SERVICES: Service[] = [
   {
     id: 'serv-creacion-pag',
     category: 'programas',
-    title: 'WEB DESIGN MASTERCLASS',
-    requirement: 'Suministrado: Web Optimizada 100%',
-    price: 'A TU GUSTO',
-    result: 'Creamos la página web de tus sueños, diseñada a gusto del cliente y personalizada según tu nicho de mercado. Con una interfaz llamativa y mejorada, optimizada al 100% para que tus clientes vayan directo a tu WhatsApp personal y cierres ventas en segundos.',
+    title: 'WEB DESIGN & VENTAS',
+    requirement: 'Diseño a tu gusto',
+    price: 'PRECIO SEGÚN NEGOCIO',
+    result: 'Creamos la página web que tu negocio merece. Interfaz llamativa, moderna y ultra-optimizada para que tus clientes no pierdan tiempo y vayan directo a cerrar el trato en tu WhatsApp personal. ¡Si no vende, no sirve, y nosotros hacemos que venda!',
     status: 'OPERATIVO',
     badge: 'VIP',
     icon: '🌐'
@@ -446,10 +190,10 @@ export const SERVICES: Service[] = [
   {
     id: 'prog-personalizado',
     category: 'programas',
-    title: 'PROYECTOS & JUEGOS REALITY',
-    requirement: 'Suministrado: Desarrollo a Medida',
-    price: 'SEGÚN COMPLEJIDAD',
-    result: '¿Tienes una idea brillante pero no sabes programar? Aquí lo hacemos realidad. Desde programas complejos basados en tus necesidades hasta el juego que siempre quisiste crear. Hacemos que tus ideas se conviertan en código funcional y exitoso.',
+    title: 'IDEA REALITY FACTORY',
+    requirement: 'Tu idea hecha código',
+    price: 'COTIZA TU SUEÑO',
+    result: '¿Tienes una idea millonaria o quieres crear tu propio juego y no sabes programar? ¡Acá somos expertos en hacer realidad lo imposible! Cuéntanos tu proyecto y nosotros lo transformamos en software funcional, APKs o aplicaciones web desde cero.',
     status: 'OPERATIVO',
     badge: 'VIP',
     icon: '🛠️'
