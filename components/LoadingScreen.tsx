@@ -1,15 +1,14 @@
-
 import React, { useEffect, useState } from 'react';
 
 export const LoadingScreen: React.FC = () => {
   const [progress, setProgress] = useState(0);
   const [msgIndex, setMsgIndex] = useState(0);
   const messages = [
-    "Iniciando Protocolos de Jhonny...",
-    "Sincronizando Bases de Datos...",
-    "Cargando Servicios de Jhonny...",
-    "Verificando Estado de API...",
-    "Estableciendo Conexión Segura..."
+    "Iniciando Protocolos Elite...",
+    "Sincronizando Nodos de Inteligencia...",
+    "Validando Identidad del Sistema...",
+    "Desplegando Arquitectura Web...",
+    "Estableciendo Canal Seguro AES-256..."
   ];
 
   useEffect(() => {
@@ -21,11 +20,11 @@ export const LoadingScreen: React.FC = () => {
         }
         return prev + 1;
       });
-    }, 25);
+    }, 20);
 
     const msgTimer = setInterval(() => {
       setMsgIndex((prev) => (prev + 1) % messages.length);
-    }, 600);
+    }, 700);
 
     return () => {
       clearInterval(timer);
@@ -34,37 +33,36 @@ export const LoadingScreen: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-[200] bg-white flex flex-col items-center justify-center overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] bg-indigo-100 rounded-full blur-[100px] animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-[40vw] h-[40vw] bg-fuchsia-100 rounded-full blur-[100px] animate-pulse delay-500"></div>
+    <div className="fixed inset-0 z-[200] bg-[#0a0a0b] flex flex-col items-center justify-center overflow-hidden">
+      {/* Subtle Luxury Background */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vw] bg-blue-900/5 rounded-full blur-[160px] animate-pulse"></div>
       
       <div className="relative z-10 flex flex-col items-center">
-        <div className="mb-12 relative">
-          <div className="w-20 h-20 border-4 border-slate-100 border-t-indigo-600 rounded-full animate-spin"></div>
+        <div className="mb-14 relative">
+          <div className="w-16 h-16 border border-white/5 border-t-blue-500 rounded-full animate-spin"></div>
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-2xl">⚡</span>
+            <span className="text-xl opacity-80">💠</span>
           </div>
         </div>
 
-        <h2 className="text-4xl font-extrabold tracking-tight text-slate-900 mb-2">
-          Jhonny<span className="text-indigo-600">DoxeoVip</span>
+        <h2 className="text-3xl font-bold tracking-tighter text-white mb-3">
+          Jhonny<span className="text-blue-500">DoxeoVip</span>
         </h2>
         
-        <p className="text-slate-400 font-mono tracking-wider text-xs mb-8 h-4 uppercase">
+        <p className="text-slate-600 font-bold tracking-[0.3em] text-[8px] mb-12 h-4 uppercase">
           {messages[msgIndex]}
         </p>
 
-        <div className="w-72 h-1.5 bg-slate-100 rounded-full overflow-hidden shadow-sm mb-4">
+        <div className="w-60 h-1 bg-white/5 rounded-full overflow-hidden mb-6">
           <div 
-            className="h-full bg-indigo-600 transition-all duration-300 ease-out shadow-[0_0_15px_rgba(79,70,229,0.4)]"
+            className="h-full bg-blue-600 transition-all duration-300 ease-out shadow-[0_0_15px_rgba(59,130,246,0.4)]"
             style={{ width: `${progress}%` }}
           ></div>
         </div>
         
-        <div className="font-mono text-[10px] text-slate-500 flex gap-4 uppercase">
+        <div className="font-mono text-[9px] text-slate-700 flex gap-6 uppercase tracking-widest font-bold">
           <span>{progress}% COMPLETO</span>
-          <span className="animate-pulse">SISTEMA: ONLINE</span>
+          <span className="animate-pulse text-blue-900">SYSTEM: SECURE</span>
         </div>
       </div>
     </div>

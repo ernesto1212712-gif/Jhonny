@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { SERVICES, WHATSAPP_NUMBER, CATEGORIES } from './constants';
 import { ServiceCard } from './components/ServiceCard';
@@ -36,39 +35,40 @@ const App: React.FC = () => {
   const filteredServices = SERVICES.filter(s => s.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-900">
-      <div className="fixed inset-0 pointer-events-none opacity-40">
-        <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-indigo-100 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-[20%] right-[-10%] w-[40vw] h-[40vw] bg-blue-50 rounded-full blur-[100px]"></div>
+    <div className="min-h-screen bg-[#0a0a0b] text-slate-200">
+      {/* Background Decor - Minimalist Glows */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-blue-900/10 rounded-full blur-[160px]"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-indigo-900/10 rounded-full blur-[140px]"></div>
       </div>
 
-      <header className="relative pt-24 pb-16 px-4 text-center z-10">
-        <div className="inline-flex items-center gap-2 px-5 py-2 bg-white rounded-full border border-slate-200 shadow-sm mb-12 animate-fade-in">
-          <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">SISTEMAS ELITE • ONLINE</span>
+      <header className="relative pt-32 pb-20 px-4 text-center z-10 animate-fade-up">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/5 border border-white/10 rounded-full mb-10">
+          <span className="flex h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-[0.3em]">Cyber Security Infrastructure</span>
         </div>
         
-        <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.85]">
+        <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-8 leading-none">
           Jhonny<span className="gradient-text">DoxeoVip</span>
         </h1>
         
-        <p className="text-slate-500 text-lg md:text-2xl font-bold max-w-2xl mx-auto leading-tight mb-16">
-          Investigación OSINT Profesional, Cuentas Streaming y Desarrollo de Software Master.
+        <p className="text-slate-500 text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed mb-16 px-4">
+          La verdad está en los datos. Convertimos el análisis de información en <span className="text-blue-400">poder digital</span>.
         </p>
 
-        <div className="flex justify-center">
-          <div className="bg-white/70 backdrop-blur-md p-2 rounded-[2.5rem] flex flex-wrap justify-center gap-2 shadow-xl border border-white/50">
+        <div className="flex justify-center px-4 overflow-x-auto custom-scrollbar pb-4">
+          <div className="glass-obsidian p-1.5 rounded-2xl flex gap-1 shadow-2xl">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`flex items-center gap-3 px-6 md:px-10 py-4 md:py-5 rounded-full text-xs md:text-sm font-black transition-all uppercase tracking-widest ${
+                className={`flex items-center gap-3 px-6 md:px-8 py-3.5 rounded-xl text-[10px] md:text-xs font-bold transition-all uppercase tracking-widest border border-transparent whitespace-nowrap ${
                   activeCategory === cat.id 
-                  ? 'bg-slate-900 text-white shadow-lg scale-105' 
-                  : 'text-slate-400 hover:bg-slate-50 hover:text-slate-600'
+                  ? 'bg-blue-600 text-white shadow-lg border-blue-400/30' 
+                  : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
                 }`}
               >
-                <span className="text-xl md:text-2xl">{cat.icon}</span>
+                <span className="text-lg">{cat.icon}</span>
                 {cat.label}
               </button>
             ))}
@@ -76,8 +76,8 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      <main className="relative max-w-7xl mx-auto px-6 pb-40 z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <main className="relative max-w-7xl mx-auto px-6 pb-40 z-10 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredServices.map((service) => (
             <ServiceCard 
               key={service.id} 
@@ -88,15 +88,15 @@ const App: React.FC = () => {
         </div>
       </main>
 
-      <footer className="relative py-20 bg-white border-t border-slate-100 text-center z-10">
+      <footer className="relative py-16 bg-black/40 border-t border-white/5 text-center z-10">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-slate-400 font-bold uppercase tracking-widest text-[9px]">
-            <p>&copy; 2025 JHONNYDOXEOVIP • OSINT & MASTER DEVELOPER</p>
-            <div className="flex gap-10">
-              <a href="#" className="hover:text-indigo-600">SOPORTE ELITE 24/7</a>
-              <a href="#" className="hover:text-indigo-600">PROTOCOLOS VIP</a>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-slate-600 font-bold uppercase tracking-widest text-[8px]">
+            <p>&copy; 2025 JHONNYDOXEOVIP • CIBERSEGURIDAD DE ÉLITE</p>
+            <div className="flex gap-8">
+              <a href="#" className="hover:text-blue-500 transition-colors">OSINT PROTOCOL</a>
+              <a href="#" className="hover:text-blue-500 transition-colors">VIP SUPPORT</a>
             </div>
-            <p className="text-indigo-600 font-black">ENCRIPTACIÓN AES-256 ACTIVA</p>
+            <p className="text-blue-900 font-black">ENCRYPTED SESSION ACTIVE</p>
           </div>
         </div>
       </footer>
