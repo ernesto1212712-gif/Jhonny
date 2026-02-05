@@ -1,7 +1,8 @@
 
 export interface Service {
   id: string;
-  category: 'doxeo' | 'streaming' | 'programas';
+  // Added 'extras' category to support additional services defined in constants.ts
+  category: 'doxeo' | 'streaming' | 'programas' | 'extras';
   title: string;
   requirement: string;
   price: string;
