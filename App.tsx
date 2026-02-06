@@ -15,9 +15,11 @@ const App: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('doxeo');
   const [isDarkMode, setIsDarkMode] = useState(true);
   
-  // Announcement State with new elite welcome message
+  // OFFICIAL MASTER ANNOUNCEMENT - This updates for everyone when the app updates
+  const MASTER_ANNOUNCEMENT = '💎 ¡SISTEMA ACTIVADO! Gracias por unirte a la élite y descargar nuestra App Oficial. Tu seguridad y acceso a la información ahora son de nivel superior. Explora, adquiere y domina el entorno digital. 🚀';
+
   const [announcement, setAnnouncement] = useState(() => {
-    return localStorage.getItem('announcement') || '💎 ¡ACCESO CONCEDIDO! Gracias por instalar la infraestructura oficial de JhonnyDoxeoVip. Ahora formas parte de la red de inteligencia más potente de Perú. Explora nuestro arsenal y adquiere el poder hoy. 🚀';
+    return localStorage.getItem('announcement') || MASTER_ANNOUNCEMENT;
   });
   
   const [showAdmin, setShowAdmin] = useState(false);
@@ -26,7 +28,9 @@ const App: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
     
-    // Request notification permission
+    // Auto-update to master announcement if local is different (Optional sync logic)
+    // For now, we trust the hardcoded default for new users.
+    
     if ('Notification' in window && Notification.permission === 'default') {
       Notification.requestPermission();
     }
@@ -46,7 +50,6 @@ const App: React.FC = () => {
       setShowAdmin(true);
       setClickCount(0);
     }
-    // Reset click count after 3 seconds
     setTimeout(() => setClickCount(0), 3000);
   };
 
@@ -87,7 +90,6 @@ const App: React.FC = () => {
         <div className={`absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full blur-[140px] transition-opacity duration-700 ${isDarkMode ? 'bg-indigo-900/10 opacity-100' : 'bg-indigo-500/10 opacity-70'}`}></div>
       </div>
 
-      {/* Theme Toggle Button */}
       <div className="fixed top-16 right-6 z-[60]">
         <button 
           onClick={toggleTheme}

@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'jhonny-vip-v6-elite';
+const CACHE_NAME = 'jhonny-vip-v7-global';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -16,21 +16,21 @@ const STATIC_ASSETS = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('Protocolo Offline: Blindaje de interfaz v6 iniciado.');
+      console.log('Protocolo Global Sync: Versión v7 instalada.');
       return cache.addAll(STATIC_ASSETS);
     })
   );
   self.skipWaiting();
 });
 
-// Activación: Limpiar versiones antiguas para liberar espacio
+// Activación: Limpiar versiones antiguas
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
           if (cacheName !== CACHE_NAME) {
-            console.log('Eliminando protocolo antiguo:', cacheName);
+            console.log('Actualizando protocolo a v7:', cacheName);
             return caches.delete(cacheName);
           }
         })
@@ -40,7 +40,7 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Intercepción: Estrategia Stale-While-Revalidate (Carga instantánea + actualización silenciosa)
+// Intercepción: Stale-While-Revalidate
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
