@@ -69,7 +69,7 @@ const App: React.FC = () => {
     } else if (service.id === 'extra-wsban') {
         message = `¡Hola JhonnyDoxeoVip! 🚫 Solicito el servicio de *BANEO DE WHATSAPP*. Tengo el número objetivo listo.`;
     } else {
-      message = `Hola JhonnyDoxeoVip, solicito el servicio de Inteligencia: *${service.title}*.\nRequisito: ${service.requirement}\nCosto: ${service.price}.`;
+      message = `Hola JhonnyDoxeoVip, solicito el servicio de Doxeo: *${service.title}*.\nRequisito: ${service.requirement}\nCosto: ${service.price}.`;
     }
     
     const encodedMessage = encodeURIComponent(message);
