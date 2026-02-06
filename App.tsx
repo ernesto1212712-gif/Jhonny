@@ -7,16 +7,48 @@ import { LoadingScreen } from './components/LoadingScreen';
 import { FAQSection } from './components/FAQSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { InstallPrompt } from './components/InstallPrompt';
+import { AnnouncementBanner } from './components/AnnouncementBanner';
+import { AdminPanel } from './components/AdminPanel';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState<string>('doxeo');
   const [isDarkMode, setIsDarkMode] = useState(true);
+  
+  // Announcement State with new elite welcome message
+  const [announcement, setAnnouncement] = useState(() => {
+    return localStorage.getItem('announcement') || '💎 ¡ACCESO CONCEDIDO! Gracias por instalar la infraestructura oficial de JhonnyDoxeoVip. Ahora formas parte de la red de inteligencia más potente de Perú. Explora nuestro arsenal y adquiere el poder hoy. 🚀';
+  });
+  
+  const [showAdmin, setShowAdmin] = useState(false);
+  const [clickCount, setClickCount] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
+    
+    // Request notification permission
+    if ('Notification' in window && Notification.permission === 'default') {
+      Notification.requestPermission();
+    }
+    
     return () => clearTimeout(timer);
   }, []);
+
+  const handleUpdateAnnouncement = (msg: string) => {
+    setAnnouncement(msg);
+    localStorage.setItem('announcement', msg);
+    setShowAdmin(false);
+  };
+
+  const handleLogoClick = () => {
+    setClickCount(prev => prev + 1);
+    if (clickCount >= 5) {
+      setShowAdmin(true);
+      setClickCount(0);
+    }
+    // Reset click count after 3 seconds
+    setTimeout(() => setClickCount(0), 3000);
+  };
 
   const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
@@ -47,6 +79,8 @@ const App: React.FC = () => {
 
   return (
     <div className={`min-h-screen transition-colors duration-500 ${isDarkMode ? 'bg-[#0a0a0b] text-slate-200' : 'bg-slate-50 text-slate-900'}`}>
+      <AnnouncementBanner message={announcement} isDarkMode={isDarkMode} />
+      
       {/* Background Decor */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className={`absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] rounded-full blur-[160px] transition-opacity duration-700 ${isDarkMode ? 'bg-blue-900/10 opacity-100' : 'bg-blue-500/10 opacity-70'}`}></div>
@@ -54,7 +88,7 @@ const App: React.FC = () => {
       </div>
 
       {/* Theme Toggle Button */}
-      <div className="fixed top-6 right-6 z-[60]">
+      <div className="fixed top-16 right-6 z-[60]">
         <button 
           onClick={toggleTheme}
           className={`p-3 rounded-2xl border transition-all duration-300 shadow-2xl ${isDarkMode ? 'bg-white/5 border-white/10 text-amber-400 hover:bg-white/10' : 'bg-white border-slate-200 text-blue-600 hover:shadow-blue-200/50'}`}
@@ -68,8 +102,11 @@ const App: React.FC = () => {
         </button>
       </div>
 
-      <header className="relative pt-32 pb-10 px-4 text-center z-10 animate-fade-up">
-        <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-10 border transition-colors duration-300 ${isDarkMode ? 'bg-white/5 border-white/10' : 'bg-blue-50 border-blue-200 shadow-sm'}`}>
+      <header className="relative pt-20 pb-10 px-4 text-center z-10 animate-fade-up">
+        <div 
+          onClick={handleLogoClick}
+          className={`cursor-pointer inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-10 border transition-all duration-300 active:scale-95 ${isDarkMode ? 'bg-white/5 border-white/10' : 'bg-blue-50 border-blue-200 shadow-sm'}`}
+        >
           <span className="flex h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse"></span>
           <span className={`text-[9px] font-black uppercase tracking-[0.3em] ${isDarkMode ? 'text-slate-400' : 'text-blue-600'}`}>Cyber Security Infrastructure</span>
         </div>
@@ -125,7 +162,7 @@ const App: React.FC = () => {
       <footer className={`relative py-16 border-t text-center z-10 transition-colors duration-300 ${isDarkMode ? 'bg-black/40 border-white/5' : 'bg-white border-slate-200'}`}>
         <div className="max-w-7xl mx-auto px-6">
           <div className={`flex flex-col md:flex-row justify-between items-center gap-8 font-black uppercase tracking-widest text-[9px] transition-colors duration-300 ${isDarkMode ? 'text-slate-600' : 'text-slate-700'}`}>
-            <p>&copy; 2025 JHONNYDOXEOVIP • CIBERSEGURIDAD DE ÉLITE</p>
+            <p onClick={handleLogoClick} className="cursor-pointer">&copy; 2025 JHONNYDOXEOVIP • CIBERSEGURIDAD DE ÉLITE</p>
             <div className="flex gap-8">
               <a href="#" className="hover:text-blue-600 transition-colors">PROTOCOLO VIP</a>
               <a href="#" className="hover:text-blue-600 transition-colors">SOPORTE 24/7</a>
@@ -134,6 +171,15 @@ const App: React.FC = () => {
           </div>
         </div>
       </footer>
+
+      {showAdmin && (
+        <AdminPanel 
+          currentAnnouncement={announcement} 
+          onUpdate={handleUpdateAnnouncement} 
+          onClose={() => setShowAdmin(false)}
+          isDarkMode={isDarkMode}
+        />
+      )}
 
       <AIAssistant isDarkMode={isDarkMode} />
       <InstallPrompt isDarkMode={isDarkMode} />
