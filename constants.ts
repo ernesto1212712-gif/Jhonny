@@ -142,6 +142,18 @@ export const SERVICES: Service[] = [
   },
 
   // --- SERVICIOS EXTRAS ---
+{
+    id: 'extra-bloqueo',
+    category: 'extras',
+    title: 'BLOQUEO DE LÍNEA + IMEI + BANCAS 🔒',
+    requirement: 'Protocolo de Seguridad Integral (DNI/CEL)',
+    price: 'CONSULTAR AL PRIVADO',
+    result: 'Servicio exclusivo de bloqueo de línea, reporte de IMEI y restricción inmediata de bancas móviles para máxima protección. Consultar disponibilidad y requisitos por privado.',
+    status: 'OPERATIVO',
+    badge: 'VIP',
+    icon: '🔒',
+    logoUrl: 'https://i.postimg.cc/kg6HBLvF/photo-4904659013891460007-y.jpg'
+  },
   {
     id: 'extra-izipay',
     category: 'extras',
@@ -158,10 +170,10 @@ export const SERVICES: Service[] = [
     category: 'extras',
     title: 'BANEO DE WHATSAPP PERMANENTE 🚫',
     requirement: 'Protocolo de restricción de acceso a servicios Meta',
-    price: '30 SOLES',
+    price: 'XX SOLES',
     result: 'Bajo en 24h o menos. Solo se necesita el número. Bájale el WhatsApp a tu ex o a quien desees de forma rápida y permanente.',
     status: 'OPERATIVO',
     badge: 'PREMIUM',
     icon: '📲'
   }
-];
+]
