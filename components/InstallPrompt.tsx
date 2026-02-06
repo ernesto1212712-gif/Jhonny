@@ -5,7 +5,7 @@ export const InstallPrompt: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode })
   const [isVisible, setIsVisible] = useState(false);
   const [platform, setPlatform] = useState<'ios' | 'android' | 'other'>('other');
 
-  const APP_ICON = "https://cdn-icons-png.flaticon.com/512/9344/9344845.png";
+  const APP_ICON = "https://i.postimg.cc/1RGDBBJW/Gemini-Generated-Image-vwp3quvwp3quvwp3.png";
 
   useEffect(() => {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
@@ -15,7 +15,7 @@ export const InstallPrompt: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode })
     if (!isInstalled && (isIOS || isAndroid)) {
       setPlatform(isIOS ? 'ios' : 'android');
       // Mostrar después de un pequeño delay
-      const timer = setTimeout(() => setIsVisible(true), 3000);
+      const timer = setTimeout(() => setIsVisible(true), 5000);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -27,15 +27,15 @@ export const InstallPrompt: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode })
       <div className={`p-6 rounded-[2rem] shadow-2xl border flex flex-col gap-4 ${isDarkMode ? 'glass-obsidian border-white/10' : 'bg-white border-slate-200'}`}>
         <div className="flex items-start gap-4">
           <div className="w-16 h-16 bg-slate-900/50 rounded-2xl flex items-center justify-center p-2.5 shadow-lg overflow-hidden border border-cyan-500/20">
-            <img src={APP_ICON} alt="App Icon" className="w-full h-full object-contain shadow-cyan-500/20" />
+            <img src={APP_ICON} alt="App Icon" className="w-full h-full object-contain shadow-cyan-500/20 rounded-xl" />
           </div>
           <div className="flex-1">
             <h3 className={`font-black text-sm tracking-tight ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-              Instalar App JhonnyDoxeoVip
+              Instalar JhonnyDoxeoVip
             </h3>
             <p className={`text-[11px] font-bold mt-1 ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
               {platform === 'ios' 
-                ? 'Toca el icono de "Compartir" y luego "Añadir a pantalla de inicio"' 
+                ? 'Toca "Compartir" y luego "Añadir a pantalla de inicio"' 
                 : 'Instala el acceso directo para entrar como una App nativa y navegar sin conexión.'}
             </p>
           </div>

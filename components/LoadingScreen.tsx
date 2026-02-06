@@ -12,7 +12,7 @@ export const LoadingScreen: React.FC = () => {
     "Estableciendo Canal Seguro AES-256..."
   ];
 
-  const APP_ICON = "https://cdn-icons-png.flaticon.com/512/9344/9344845.png";
+  const APP_ICON = "https://i.postimg.cc/1RGDBBJW/Gemini-Generated-Image-vwp3quvwp3quvwp3.png";
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -44,7 +44,7 @@ export const LoadingScreen: React.FC = () => {
         <div className="mb-14 relative group">
           <div className="w-24 h-24 border-2 border-white/5 border-t-cyan-500 rounded-full animate-spin"></div>
           <div className="absolute inset-0 flex items-center justify-center p-4">
-            <img src={APP_ICON} alt="Logo" className="w-full h-full object-contain animate-pulse" />
+            <img src={APP_ICON} alt="Logo JhonnyDoxeoVip" className="w-full h-full object-contain animate-pulse rounded-2xl" />
           </div>
         </div>
 
@@ -52,7 +52,7 @@ export const LoadingScreen: React.FC = () => {
           Jhonny<span className="text-cyan-500">DoxeoVip</span>
         </h2>
         
-        <p className="text-slate-600 font-bold tracking-[0.3em] text-[8px] mb-12 h-4 uppercase">
+        <p className="text-slate-600 font-bold tracking-[0.3em] text-[8px] mb-12 h-4 uppercase text-center">
           {messages[msgIndex]}
         </p>
 
