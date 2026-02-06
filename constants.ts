@@ -176,4 +176,4 @@ export const SERVICES: Service[] = [
     badge: 'PREMIUM',
     icon: '📲'
   }
-]
+];
