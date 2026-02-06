@@ -12,7 +12,7 @@ export const LoadingScreen: React.FC = () => {
     "Estableciendo Canal Seguro AES-256..."
   ];
 
-  const APP_ICON = "https://cdn-icons-png.flaticon.com/512/11189/11189014.png";
+  const APP_ICON = "https://cdn-icons-png.flaticon.com/512/9344/9344845.png";
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -42,14 +42,14 @@ export const LoadingScreen: React.FC = () => {
       
       <div className="relative z-10 flex flex-col items-center">
         <div className="mb-14 relative group">
-          <div className="w-20 h-20 border-2 border-white/5 border-t-blue-500 rounded-full animate-spin"></div>
+          <div className="w-24 h-24 border-2 border-white/5 border-t-cyan-500 rounded-full animate-spin"></div>
           <div className="absolute inset-0 flex items-center justify-center p-4">
             <img src={APP_ICON} alt="Logo" className="w-full h-full object-contain animate-pulse" />
           </div>
         </div>
 
         <h2 className="text-3xl font-bold tracking-tighter text-white mb-3">
-          Jhonny<span className="text-blue-500">DoxeoVip</span>
+          Jhonny<span className="text-cyan-500">DoxeoVip</span>
         </h2>
         
         <p className="text-slate-600 font-bold tracking-[0.3em] text-[8px] mb-12 h-4 uppercase">
@@ -58,14 +58,14 @@ export const LoadingScreen: React.FC = () => {
 
         <div className="w-60 h-1 bg-white/5 rounded-full overflow-hidden mb-6">
           <div 
-            className="h-full bg-blue-600 transition-all duration-300 ease-out shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+            className="h-full bg-cyan-600 transition-all duration-300 ease-out shadow-[0_0_15px_rgba(6,182,212,0.4)]"
             style={{ width: `${progress}%` }}
           ></div>
         </div>
         
         <div className="font-mono text-[9px] text-slate-700 flex gap-6 uppercase tracking-widest font-bold">
           <span>{progress}% COMPLETO</span>
-          <span className="animate-pulse text-blue-900">SYSTEM: SECURE</span>
+          <span className="animate-pulse text-cyan-900">SYSTEM: SECURE</span>
         </div>
       </div>
     </div>
