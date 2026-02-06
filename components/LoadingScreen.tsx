@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 
 export const LoadingScreen: React.FC = () => {
@@ -10,6 +11,8 @@ export const LoadingScreen: React.FC = () => {
     "Desplegando Arquitectura Web...",
     "Estableciendo Canal Seguro AES-256..."
   ];
+
+  const APP_ICON = "https://cdn-icons-png.flaticon.com/512/11189/11189014.png";
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -38,10 +41,10 @@ export const LoadingScreen: React.FC = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vw] bg-blue-900/5 rounded-full blur-[160px] animate-pulse"></div>
       
       <div className="relative z-10 flex flex-col items-center">
-        <div className="mb-14 relative">
-          <div className="w-16 h-16 border border-white/5 border-t-blue-500 rounded-full animate-spin"></div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-xl opacity-80">💠</span>
+        <div className="mb-14 relative group">
+          <div className="w-20 h-20 border-2 border-white/5 border-t-blue-500 rounded-full animate-spin"></div>
+          <div className="absolute inset-0 flex items-center justify-center p-4">
+            <img src={APP_ICON} alt="Logo" className="w-full h-full object-contain animate-pulse" />
           </div>
         </div>
 

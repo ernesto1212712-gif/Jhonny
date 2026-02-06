@@ -1,27 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
+  <!-- PWA & Mobile Optimization -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="JhonnyVip">
+  <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/11189/11189014.png">
+
   <!-- SEO Primary -->
   <title>JhonnyDoxeoVip | Ciberseguridad & Desarrollo Web de Élite</title>
   <meta name="title" content="JhonnyDoxeoVip | Ciberseguridad & Desarrollo Web de Élite">
-  <meta name="description" content="¿Necesitas la verdad? En JhonnyDoxeoVip transformamos el análisis de datos en poder. Ofrecemos servicios especializados en investigación detallada de identidad, localización de información crítica y creación de ecosistemas web blindados.">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://jhonny05.com/">
-  <meta property="og:title" content="JhonnyDoxeoVip | Ciberseguridad & Desarrollo Web de Élite">
-  <meta property="og:description" content="Especialistas en OSINT y Arquitectura Web Avanzada. Si la información existe, nosotros la encontramos para ti.">
-  <meta property="og:image" content="/brand-preview.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://jhonny05.com/">
-  <meta property="twitter:title" content="JhonnyDoxeoVip | Ciberseguridad & Desarrollo Web de Élite">
-  <meta property="twitter:description" content="Especialistas en OSINT y Arquitectura Web Avanzada. Si la información existe, nosotros la encontramos para ti.">
-  <meta property="twitter:image" content="/brand-preview.jpg">
+  <meta name="description" content="¿Necesitas la verdad? En JhonnyDoxeoVip transformamos el análisis de datos en poder. Ofrecemos servicios especializados en investigación detallada de identidad.">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,6 +36,7 @@
       background-color: var(--obsidian);
       color: var(--platinum);
       overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .font-mono {
@@ -57,10 +53,6 @@
       background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-    }
-
-    .electric-glow {
-      box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
     }
 
     .btn-luxury {
@@ -87,19 +79,13 @@
       transform: translateY(-8px);
     }
 
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 5px;
+    /* Hide scrollbar but keep functionality */
+    .custom-scrollbar::-webkit-scrollbar {
+      display: none;
     }
-    ::-webkit-scrollbar-track {
-      background: var(--obsidian);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #1e1e24;
-      border-radius: 10px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--electric-blue);
+    .custom-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
 
     @keyframes fade-up {

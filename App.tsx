@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { SERVICES, WHATSAPP_NUMBER, CATEGORIES, FAQS, TESTIMONIALS } from './constants';
 import { ServiceCard } from './components/ServiceCard';
@@ -5,6 +6,7 @@ import { AIAssistant } from './components/AIAssistant';
 import { LoadingScreen } from './components/LoadingScreen';
 import { FAQSection } from './components/FAQSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
+import { InstallPrompt } from './components/InstallPrompt';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -80,7 +82,6 @@ const App: React.FC = () => {
           Soluciones digitales de alto nivel. Si los datos existen, <span className="text-blue-600 font-bold">nosotros los tenemos</span>.
         </p>
 
-        {/* Categorías con Scroll Corregido para Móvil */}
         <div className="w-full flex justify-start md:justify-center px-4 overflow-x-auto custom-scrollbar pb-8 snap-x">
           <div className={`p-1.5 rounded-2xl flex gap-1 shadow-2xl transition-all duration-300 min-w-max mx-auto md:mx-0 ${isDarkMode ? 'glass-obsidian' : 'bg-white border border-slate-200 shadow-lg shadow-slate-200/50'}`}>
             {CATEGORIES.map((cat) => (
@@ -104,7 +105,6 @@ const App: React.FC = () => {
       </header>
 
       <main className="relative max-w-7xl mx-auto px-6 pb-20 z-10 animate-fade-up">
-        {/* Catálogo Grid */}
         <section id="services" className="mb-32">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredServices.map((service) => (
@@ -118,10 +118,7 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Test testimonials */}
         <TestimonialsSection testimonials={TESTIMONIALS} isDarkMode={isDarkMode} />
-
-        {/* FAQ */}
         <FAQSection faqs={FAQS} isDarkMode={isDarkMode} />
       </main>
 
@@ -139,6 +136,7 @@ const App: React.FC = () => {
       </footer>
 
       <AIAssistant isDarkMode={isDarkMode} />
+      <InstallPrompt isDarkMode={isDarkMode} />
     </div>
   );
 };
